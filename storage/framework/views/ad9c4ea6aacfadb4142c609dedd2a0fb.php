@@ -1,12 +1,11 @@
-@extends('_layouts.admins._master')
-@section('title', 'Danh Sách Sản Phẩm')
+<?php $__env->startSection('title', 'Danh Sách Sản Phẩm'); ?>
 
-@section('content-body')
+<?php $__env->startSection('content-body'); ?>
     <div class="container border mt-4">
         <div class="row mb-4">
             <div class="col-12 d-flex justify-content-between align-items-center">
                 <h1>Danh Sách Sản Phẩm</h1>
-                <a href="{{ route('nat_Admins.natsanpham.nat_create') }}" class="btn btn-success btn-lg">
+                <a href="<?php echo e(route('nat_Admins.natsanpham.nat_create')); ?>" class="btn btn-success btn-lg">
                     <i class="fa-solid fa-plus-circle"></i>Thêm mới
                 </a>
             </div>
@@ -27,29 +26,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php
+                    <?php
                         $stt = 0;
-                    @endphp
-                    @forelse ($natsp as $item)
-                        @php
+                    ?>
+                    <?php $__empty_1 = true; $__currentLoopData = $natsp; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                        <?php
                             $stt++;
-                        @endphp
+                        ?>
                         <tr>
-                            <td>{{ $stt }}</td>
-                            <td>{{ $item->natMasanpham }}</td>
-                            <td>{{ $item->natTensanpham }}</td>
+                            <td><?php echo e($stt); ?></td>
+                            <td><?php echo e($item->natMasanpham); ?></td>
+                            <td><?php echo e($item->natTensanpham); ?></td>
                             <td style="display: flex; justify-content: center; align-items: center; height: 100px;">
-                                <img src="{{ asset('storage/' . $item->natHinhanh) }}" alt="Sản phẩm {{ $item->natMasanpham }}" width="100" height="100">
+                                <img src="<?php echo e(asset('storage/' . $item->natHinhanh)); ?>" alt="Sản phẩm <?php echo e($item->natMasanpham); ?>" width="100" height="100">
                             </td>
-                            <td>{{ $item->natSoluong }}</td>
-                            <td>{{ number_format($item->natDongia, 0, ',', '.') }} VND</td>
-                            <td>{{ $item->natMaloai }}</td>
+                            <td><?php echo e($item->natSoluong); ?></td>
+                            <td><?php echo e(number_format($item->natDongia, 0, ',', '.')); ?> VND</td>
+                            <td><?php echo e($item->natMaloai); ?></td>
                             <td>
-                                @if($item->natTrangthai == 0)
+                                <?php if($item->natTrangthai == 0): ?>
                                     <span class="badge bg-success">Hiển Thị</span>
-                                @else
+                                <?php else: ?>
                                     <span class="badge bg-danger">Khóa</span>
-                                @endif
+                                <?php endif; ?>
                             </td>
                             <td class="text-center">
                                 <div class="btn-group" role="group">
@@ -59,15 +58,16 @@
                                 </div>
                             </td>
                         </tr>
-                    @empty
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                         <tr>
                             <td colspan="9" class="text-center text-muted">
                                 Chưa có thông tin sản phẩm
                             </td>
                         </tr>
-                    @endforelse
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('_layouts.admins._master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\project1\K23CNT3_NhuAnhTuan_Project1Lab\K23CNT3_NhuAnhTuan_2310900111_Project1\resources\views/nat_Admins/natsanpham/nat_list.blade.php ENDPATH**/ ?>

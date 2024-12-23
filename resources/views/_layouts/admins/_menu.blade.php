@@ -4,8 +4,14 @@
         <a href="#">Danh sách quản trị</a>
     </li>
     <li class="list-group-item">
-        
+        <a href="/nat-admin/nat-loaisanpham">
+            loại sản phẩm
+        </a>
     </li>
-    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">
+        <a href="/nat-admin/nat-sanpham">
+            Sản phẩm
+        </a>
+    </li>
     <li class="list-group-item">And a fifth one</li>
   </ul>
