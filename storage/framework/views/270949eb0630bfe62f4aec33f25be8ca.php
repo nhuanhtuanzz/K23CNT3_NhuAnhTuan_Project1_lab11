@@ -1,0 +1,1 @@
+<h1>Nội dung tiêu đề chức năng</h1><?php /**PATH C:\project1\K23CNT3_NhuAnhTuan_Project1Lab\K23CNT3_NhuAnhTuan_2310900111_Project1\resources\views/layouts/admins/headTitle.blade.php ENDPATH**/ ?>
