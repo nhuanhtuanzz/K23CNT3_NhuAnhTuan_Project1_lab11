@@ -33,7 +33,7 @@
                             <td>{{$item->natTrangthai}}</td>
                             <td>
                                 View / 
-                                <a href="nat_Admins.natloaisanpham.nat_edit">edit</a> / delete
+                                <a href="{{ route('nat_Admins.natloaisanpham.nat_edit', $item->id) }}">edit</a> / delete
                             </td>
                         </tr>
                     @empty

@@ -38,11 +38,9 @@
                             <td>{{ $stt }}</td>
                             <td>{{ $item->natMasanpham }}</td>
                             <td>{{ $item->natTensanpham }}</td>
-                            <td style="display: flex; justify-content: center; align-items: center; height: 100px;">
-                                <img src="{{ asset('storage/' . $item->natHinhanh) }}" alt="Sản phẩm {{ $item->natMasanpham }}" width="100" height="100">
-                            </td>
+                            <td>{{ $item->natHinhanh }}</td>
                             <td>{{ $item->natSoluong }}</td>
-                            <td>{{ number_format($item->natDongia, 0, ',', '.') }} VND</td>
+                            <td>{{ $item->natDongia }} VND</td>
                             <td>{{ $item->natMaloai }}</td>
                             <td>
                                 @if($item->natTrangthai == 0)
@@ -62,7 +60,7 @@
                     @empty
                         <tr>
                             <td colspan="9" class="text-center text-muted">
-                                Chưa có thông tin sản phẩm
+                                Trống
                             </td>
                         </tr>
                     @endforelse

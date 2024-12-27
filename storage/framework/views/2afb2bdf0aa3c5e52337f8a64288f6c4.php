@@ -1,7 +1,7 @@
 <ul class="list-group">
     <li class="list-group-item">Quản trị nội dung</li>
     <li class="list-group-item">
-        <a href="#">Danh sách quản trị</a>
+        <a href="#">Trang chủ</a>
     </li>
     <li class="list-group-item">
         <a href="/nat-admin/nat-loaisanpham">

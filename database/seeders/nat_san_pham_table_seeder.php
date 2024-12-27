@@ -50,7 +50,7 @@ class nat_san_pham_table_seeder extends Seeder
             'natTrangthai'=>0,
         ]);
         DB::table('nat_san_pham')->insert([
-            'natMasanpham'=>"AT01",
+            'natMasanpham'=>"AC01",
             'natTensanpham'=>"Xôi ruốc",
             'natHinhanh'=>"img/san-pham/TA01.jpg",
             'natSoluong'=>100,

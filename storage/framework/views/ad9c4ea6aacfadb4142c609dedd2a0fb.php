@@ -37,11 +37,9 @@
                             <td><?php echo e($stt); ?></td>
                             <td><?php echo e($item->natMasanpham); ?></td>
                             <td><?php echo e($item->natTensanpham); ?></td>
-                            <td style="display: flex; justify-content: center; align-items: center; height: 100px;">
-                                <img src="<?php echo e(asset('storage/' . $item->natHinhanh)); ?>" alt="Sản phẩm <?php echo e($item->natMasanpham); ?>" width="100" height="100">
-                            </td>
+                            <td><?php echo e($item->natHinhanh); ?></td>
                             <td><?php echo e($item->natSoluong); ?></td>
-                            <td><?php echo e(number_format($item->natDongia, 0, ',', '.')); ?> VND</td>
+                            <td><?php echo e($item->natDongia); ?> VND</td>
                             <td><?php echo e($item->natMaloai); ?></td>
                             <td>
                                 <?php if($item->natTrangthai == 0): ?>
@@ -61,7 +59,7 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                         <tr>
                             <td colspan="9" class="text-center text-muted">
-                                Chưa có thông tin sản phẩm
+                                Trống
                             </td>
                         </tr>
                     <?php endif; ?>

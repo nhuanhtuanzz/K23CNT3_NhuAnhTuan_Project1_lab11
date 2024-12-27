@@ -28,31 +28,21 @@ class nat_loai_san_phamController extends Controller
     }
     public function natEdit($id)
     {
-        $natlsps = nat_loai_san_pham::find($id);
-        if (!$natlsps) {
-            return redirect()->route('nat_Admins.natloaisanpham')->with('Lỗi', 'Loại sản phẩm không tồn tại!');
-        }
-            return view('nat_Admins.natloaisanpham.nat_edit',['natlsp'=>$natlsps]);
+        $natlsp = nat_loai_san_pham::find($id);
+        return view('nat_Admins.natloaisanpham.nat_edit',['natlsp'=>$natlsp]);
     }
-    
-    public function natEditSubmit(Request $request)
+    #Edit - submit
+    public function ldtEditSubmit(Request $request)
     {
-        $validatedData = $request->validate([
-            'natMaloai' => 'required|string|max:255|unique:nat_loai_san_pham,natMaloai,' . $request->id,  
-            'natTenloai' => 'required|string|max:255',   
-            'natTrangthai' => 'required|in:0,1',
-        ]);
-        $natlsps = nat_loai_san_pham::find($request->id);
-        if (!$natlsps) {
-            return redirect()->route('nat_Admins.natloaisanpham')->with('Lỗi', 'Loại sản phẩm không tồn tại!');
-        }
-        $natlsps->natMaloai = $request->natMaloai;
-        $natlsps->natTenloai = $request->natTenloai;
-        $natlsps->natTrangthai = $request->natTrangthai;
-    
-        $natlsps->save();
-    
-        return redirect()->route('nat_Admins.natloaisanpham')->with( 'Cập nhật thành công!');
+        //ghi du lieu xuong db
+        $natlsp =  nat_loai_san_pham::find($request->id);
+
+        $natlsp->natMaloai = $request->natMaloai;
+        $natlsp->natTenloai = $request->natTenloai;
+        $natlsp->natTrangThai = $request->natTrangThai;
+
+        $natlsp->save();
+        return redirect()->route('natAdmins.natlsp');
     }
 
     }
